@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.label {
+  border-radius: 18px;
+  background-color: lightgray;
+  font-size: 0.7rem;
+  padding: 0px 3px;
+  cursor: pointer;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.w-50 {
+  width: 50%;
+  display: inline-block;
+  white-space: nowrap;
+  float: left;
+  padding: 10px;
+}
+
+.border-right {
+  border-right: 1px solid black;
+}
+
+.vertical-line {
+  position: fixed;
+  left: 50%;
+  height: 100%;
+  z-index: -100;
+  background: black;
+  width: 1px;
+  overflow: hidden;
+  bottom: 0;
+}

@@ -1,0 +1,5 @@
+<label for="tour-name">Tour Name: </label>
+<select [compareWith]="utils.compareWithId" [ngModel]="selectedTour" (ngModelChange)="onSelectedTourChange($event)" id="tour-name"
+  *ngIf="tours.length > 0">
+  <option *ngFor="let tour of tours; trackBy: utils.trackObjectById" [ngValue]="tour">{{tour.name}}</option>
+</select>

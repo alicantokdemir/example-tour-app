@@ -1,0 +1,7 @@
+<h3>Waypoints</h3>
+<ul>
+  <li ngDraggable (stopped)="onDragEnd($event, waypoint)" [trackPosition]="trackPosition" *ngFor="let waypoint of waypoints; trackBy: utils.trackObjectById">{{waypoint.name}}</li>
+</ul>
+<small>(Click on map to add more waypoints)</small>
+<br />
+<small>(Drag & drop the waypoints to left to make them part of the tour)</small>

@@ -1,0 +1,4 @@
+<label for="driver">Driver: </label>
+<select [compareWith]="utils.compareWithId" [ngModel]="selectedDriver" (ngModelChange)="onSelectedDriverChange($event)" name="driver" id="driver">
+  <option *ngFor="let driver of drivers; trackBy: utils.trackObjectById" [ngValue]="driver">{{driver.name}}</option>
+</select>

@@ -1,0 +1,20 @@
+<ng-container *ngIf="tour">
+  <h3>
+    {{tour.name}}
+  </h3>
+  <p>
+    {{tour.description}}
+  </p>
+  <ol>
+    <li *ngFor="let point of tour.waypoints; let i = index; trackBy: utils.trackObjectById">
+      {{i + 1}}.
+      <span *ngIf="!point.editMode" (click)="point.editMode = true">{{point.name}}</span>
+      <input *ngIf="point.editMode" type="text" [(ngModel)]="point.name" (mouseleave)="toursService.updateWaypoint(tour, point); point.editMode = false"
+        (keyup.enter)="toursService.updateWaypoint(tour, point); point.editMode = false" />
+      <span class="label" (click)="removeWaypoint(point)">
+        <small>remove</small>
+      </span>
+    </li>
+  </ol>
+  <driver-list [(selectedDriver)]="tour.driver"></driver-list>
+</ng-container>
